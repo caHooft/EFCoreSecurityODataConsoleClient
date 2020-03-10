@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 10-3-2020 13:56:46
+// Generation date: 10-3-2020 14:16:03
 namespace EFCoreSecurityODataConsoleClient
 {
     /// <summary>

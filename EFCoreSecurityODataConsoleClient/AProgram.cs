@@ -310,7 +310,7 @@ namespace EFCoreSecurityODataConsoleClient
             while (!endApp)
             {
 
-                string serviceUri = "http://localhost:57449/odata/";
+                string serviceUri = "http://localhost:52412/odata/";
                 var container = new DefaultContainer(new Uri(serviceUri));
 
                 Console.WriteLine("Choose an option from the following list:");
