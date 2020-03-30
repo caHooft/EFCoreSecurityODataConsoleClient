@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 10-3-2020 14:16:03
+// Generation date: 27-3-2020 10:37:53
 namespace EFCoreSecurityODataConsoleClient
 {
     /// <summary>
@@ -39,7 +39,7 @@ namespace EFCoreSecurityODataConsoleClient
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
-            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Demos", "EFCoreSecurityODataConsoleClient");
+            global::System.Type resolvedType = this.DefaultResolveType(typeName, "COS", "EFCoreSecurityODataConsoleClient");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -59,37 +59,37 @@ namespace EFCoreSecurityODataConsoleClient
             {
                 if (originalNameAttribute != null)
                 {
-                    return string.Concat("Demos.", originalNameAttribute.OriginalName);
+                    return string.Concat("COS.", originalNameAttribute.OriginalName);
                 }
-                return string.Concat("Demos.", clientType.Name);
+                return string.Concat("COS.", clientType.Name);
             }
             return null;
         }
         /// <summary>
-        /// There are no comments for Cars in the schema.
+        /// There are no comments for Contact in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("cars")]
-        public global::Microsoft.OData.Client.DataServiceQuery<Car> Cars
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Contact")]
+        public global::Microsoft.OData.Client.DataServiceQuery<ContactRecord> Contact
         {
             get
             {
-                if ((this._Cars == null))
+                if ((this._Contact == null))
                 {
-                    this._Cars = base.CreateQuery<Car>("cars");
+                    this._Contact = base.CreateQuery<ContactRecord>("Contact");
                 }
-                return this._Cars;
+                return this._Contact;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::Microsoft.OData.Client.DataServiceQuery<Car> _Cars;
+        private global::Microsoft.OData.Client.DataServiceQuery<ContactRecord> _Contact;
         /// <summary>
-        /// There are no comments for Cars in the schema.
+        /// There are no comments for Contact in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public void AddToCars(Car car)
+        public void AddToContact(ContactRecord contactRecord)
         {
-            base.AddObject("cars", car);
+            base.AddObject("Contact", contactRecord);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
         private abstract class GeneratedEdmModel
@@ -99,34 +99,38 @@ namespace EFCoreSecurityODataConsoleClient
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
             private const string Edmx = @"<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
   <edmx:DataServices>
-    <Schema Namespace=""Demos"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
-      <EntityType Name=""Car"">
+    <Schema Namespace=""COS"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
+      <EntityType Name=""ContactRecord"">
         <Key>
-          <PropertyRef Name=""ID"" />
+          <PropertyRef Name=""Index"" />
         </Key>
-        <Property Name=""ID"" Type=""Edm.Int32"" Nullable=""false"" />
-        <Property Name=""AmountMade"" Type=""Edm.Double"" Nullable=""false"" />
-        <Property Name=""APK"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""Colour"" Type=""Edm.String"" />
-        <Property Name=""TimeWhenAddedToDatabase"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
-        <Property Name=""Brand"" Type=""Demos._Brands"" Nullable=""false"" />
+        <Property Name=""Index"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""ArchivedDateTime"" Type=""Edm.DateTimeOffset"" />
+        <Property Name=""BillingAddressBlock"" Type=""Edm.String"" />
+        <Property Name=""Email"" Type=""Edm.String"" />
+        <Property Name=""EmailErrorCount"" Type=""Edm.Int32"" />
+        <Property Name=""FormalName"" Type=""Edm.String"" />
+        <Property Name=""HasDifferentPostalAddress"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""HasDifferentVisitingAddress"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""ImportDateTime"" Type=""Edm.DateTimeOffset"" />
+        <Property Name=""Initials"" Type=""Edm.String"" />
+        <Property Name=""IsArchived"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""IsDebtor"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""IsLegalEntity"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""JobTitle"" Type=""Edm.String"" />
+        <Property Name=""LastModificationDateTime"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
+        <Property Name=""LetterSalutation"" Type=""Edm.String"" />
+        <Property Name=""LongName"" Type=""Edm.String"" />
+        <Property Name=""MobileNo"" Type=""Edm.String"" />
+        <Property Name=""Name"" Type=""Edm.String"" />
+        <Property Name=""No"" Type=""Edm.String"" />
+        <Property Name=""PostalAddressBlock"" Type=""Edm.String"" />
+        <Property Name=""ShortName"" Type=""Edm.String"" />
+        <Property Name=""TelNo"" Type=""Edm.String"" />
+        <Property Name=""VisitingAddressBlock"" Type=""Edm.String"" />
       </EntityType>
-      <EnumType Name=""_Brands"">
-        <Member Name=""Audi"" Value=""6"" />
-        <Member Name=""BMW"" Value=""9"" />
-        <Member Name=""Ferrari"" Value=""1"" />
-        <Member Name=""Ford"" Value=""7"" />
-        <Member Name=""Honda"" Value=""8"" />
-        <Member Name=""Mercedes"" Value=""10"" />
-        <Member Name=""Mini"" Value=""2"" />
-        <Member Name=""Nissan"" Value=""5"" />
-        <Member Name=""Porsche"" Value=""3"" />
-        <Member Name=""Tesla"" Value=""0"" />
-        <Member Name=""Toyota"" Value=""11"" />
-        <Member Name=""Volkswagen"" Value=""4"" />
-      </EnumType>
       <EntityContainer Name=""DefaultContainer"">
-        <EntitySet Name=""cars"" EntityType=""Demos.Car"" />
+        <EntitySet Name=""Contact"" EntityType=""COS.ContactRecord"" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>
@@ -171,198 +175,622 @@ namespace EFCoreSecurityODataConsoleClient
         }
     }
     /// <summary>
-    /// There are no comments for CarSingle in the schema.
+    /// There are no comments for ContactRecordSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("CarSingle")]
-    public partial class CarSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Car>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ContactRecordSingle")]
+    public partial class ContactRecordSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ContactRecord>
     {
         /// <summary>
-        /// Initialize a new CarSingle object.
+        /// Initialize a new ContactRecordSingle object.
         /// </summary>
-        public CarSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public ContactRecordSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) {}
 
         /// <summary>
-        /// Initialize a new CarSingle object.
+        /// Initialize a new ContactRecordSingle object.
         /// </summary>
-        public CarSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public ContactRecordSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) {}
 
         /// <summary>
-        /// Initialize a new CarSingle object.
+        /// Initialize a new ContactRecordSingle object.
         /// </summary>
-        public CarSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Car> query)
+        public ContactRecordSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ContactRecord> query)
             : base(query) {}
 
     }
     /// <summary>
-    /// There are no comments for Car in the schema.
+    /// There are no comments for ContactRecord in the schema.
     /// </summary>
     /// <KeyProperties>
-    /// ID
+    /// Index
     /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("ID")]
-    [global::Microsoft.OData.Client.EntitySet("cars")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Car")]
-    public partial class Car : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.Key("Index")]
+    [global::Microsoft.OData.Client.EntitySet("Contact")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ContactRecord")]
+    public partial class ContactRecord : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new Car object.
+        /// Create a new ContactRecord object.
         /// </summary>
-        /// <param name="ID">Initial value of ID.</param>
-        /// <param name="amountMade">Initial value of AmountMade.</param>
-        /// <param name="aPK">Initial value of APK.</param>
-        /// <param name="timeWhenAddedToDatabase">Initial value of TimeWhenAddedToDatabase.</param>
-        /// <param name="brand">Initial value of Brand.</param>
+        /// <param name="index">Initial value of Index.</param>
+        /// <param name="hasDifferentPostalAddress">Initial value of HasDifferentPostalAddress.</param>
+        /// <param name="hasDifferentVisitingAddress">Initial value of HasDifferentVisitingAddress.</param>
+        /// <param name="isArchived">Initial value of IsArchived.</param>
+        /// <param name="isDebtor">Initial value of IsDebtor.</param>
+        /// <param name="isLegalEntity">Initial value of IsLegalEntity.</param>
+        /// <param name="lastModificationDateTime">Initial value of LastModificationDateTime.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        public static Car CreateCar(int ID, double amountMade, bool aPK, global::System.DateTimeOffset timeWhenAddedToDatabase, global::EFCoreSecurityODataConsoleClient._Brands brand)
+        public static ContactRecord CreateContactRecord(int index, 
+                    bool hasDifferentPostalAddress, 
+                    bool hasDifferentVisitingAddress, 
+                    bool isArchived, 
+                    bool isDebtor, 
+                    bool isLegalEntity, 
+                    global::System.DateTimeOffset lastModificationDateTime)
         {
-            Car car = new Car();
-            car.ID = ID;
-            car.AmountMade = amountMade;
-            car.APK = aPK;
-            car.TimeWhenAddedToDatabase = timeWhenAddedToDatabase;
-            car.Brand = brand;
-            return car;
+            ContactRecord contactRecord = new ContactRecord();
+            contactRecord.Index = index;
+            contactRecord.HasDifferentPostalAddress = hasDifferentPostalAddress;
+            contactRecord.HasDifferentVisitingAddress = hasDifferentVisitingAddress;
+            contactRecord.IsArchived = isArchived;
+            contactRecord.IsDebtor = isDebtor;
+            contactRecord.IsLegalEntity = isLegalEntity;
+            contactRecord.LastModificationDateTime = lastModificationDateTime;
+            return contactRecord;
         }
         /// <summary>
-        /// There are no comments for Property ID in the schema.
+        /// There are no comments for Property Index in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ID")]
-        public int ID
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Index")]
+        public int Index
         {
             get
             {
-                return this._ID;
+                return this._Index;
             }
             set
             {
-                this.OnIDChanging(value);
-                this._ID = value;
-                this.OnIDChanged();
-                this.OnPropertyChanged("ID");
+                this.OnIndexChanging(value);
+                this._Index = value;
+                this.OnIndexChanged();
+                this.OnPropertyChanged("Index");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private int _ID;
-        partial void OnIDChanging(int value);
-        partial void OnIDChanged();
+        private int _Index;
+        partial void OnIndexChanging(int value);
+        partial void OnIndexChanged();
         /// <summary>
-        /// There are no comments for Property AmountMade in the schema.
+        /// There are no comments for Property ArchivedDateTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AmountMade")]
-        public double AmountMade
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ArchivedDateTime")]
+        public global::System.Nullable<global::System.DateTimeOffset> ArchivedDateTime
         {
             get
             {
-                return this._AmountMade;
+                return this._ArchivedDateTime;
             }
             set
             {
-                this.OnAmountMadeChanging(value);
-                this._AmountMade = value;
-                this.OnAmountMadeChanged();
-                this.OnPropertyChanged("AmountMade");
+                this.OnArchivedDateTimeChanging(value);
+                this._ArchivedDateTime = value;
+                this.OnArchivedDateTimeChanged();
+                this.OnPropertyChanged("ArchivedDateTime");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private double _AmountMade;
-        partial void OnAmountMadeChanging(double value);
-        partial void OnAmountMadeChanged();
+        private global::System.Nullable<global::System.DateTimeOffset> _ArchivedDateTime;
+        partial void OnArchivedDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
+        partial void OnArchivedDateTimeChanged();
         /// <summary>
-        /// There are no comments for Property APK in the schema.
+        /// There are no comments for Property BillingAddressBlock in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("APK")]
-        public bool APK
+        [global::Microsoft.OData.Client.OriginalNameAttribute("BillingAddressBlock")]
+        public string BillingAddressBlock
         {
             get
             {
-                return this._APK;
+                return this._BillingAddressBlock;
             }
             set
             {
-                this.OnAPKChanging(value);
-                this._APK = value;
-                this.OnAPKChanged();
-                this.OnPropertyChanged("APK");
+                this.OnBillingAddressBlockChanging(value);
+                this._BillingAddressBlock = value;
+                this.OnBillingAddressBlockChanged();
+                this.OnPropertyChanged("BillingAddressBlock");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private bool _APK;
-        partial void OnAPKChanging(bool value);
-        partial void OnAPKChanged();
+        private string _BillingAddressBlock;
+        partial void OnBillingAddressBlockChanging(string value);
+        partial void OnBillingAddressBlockChanged();
         /// <summary>
-        /// There are no comments for Property Colour in the schema.
+        /// There are no comments for Property Email in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Colour")]
-        public string Colour
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Email")]
+        public string Email
         {
             get
             {
-                return this._Colour;
+                return this._Email;
             }
             set
             {
-                this.OnColourChanging(value);
-                this._Colour = value;
-                this.OnColourChanged();
-                this.OnPropertyChanged("Colour");
+                this.OnEmailChanging(value);
+                this._Email = value;
+                this.OnEmailChanged();
+                this.OnPropertyChanged("Email");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private string _Colour;
-        partial void OnColourChanging(string value);
-        partial void OnColourChanged();
+        private string _Email;
+        partial void OnEmailChanging(string value);
+        partial void OnEmailChanged();
         /// <summary>
-        /// There are no comments for Property TimeWhenAddedToDatabase in the schema.
+        /// There are no comments for Property EmailErrorCount in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("TimeWhenAddedToDatabase")]
-        public global::System.DateTimeOffset TimeWhenAddedToDatabase
+        [global::Microsoft.OData.Client.OriginalNameAttribute("EmailErrorCount")]
+        public global::System.Nullable<int> EmailErrorCount
         {
             get
             {
-                return this._TimeWhenAddedToDatabase;
+                return this._EmailErrorCount;
             }
             set
             {
-                this.OnTimeWhenAddedToDatabaseChanging(value);
-                this._TimeWhenAddedToDatabase = value;
-                this.OnTimeWhenAddedToDatabaseChanged();
-                this.OnPropertyChanged("TimeWhenAddedToDatabase");
+                this.OnEmailErrorCountChanging(value);
+                this._EmailErrorCount = value;
+                this.OnEmailErrorCountChanged();
+                this.OnPropertyChanged("EmailErrorCount");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::System.DateTimeOffset _TimeWhenAddedToDatabase;
-        partial void OnTimeWhenAddedToDatabaseChanging(global::System.DateTimeOffset value);
-        partial void OnTimeWhenAddedToDatabaseChanged();
+        private global::System.Nullable<int> _EmailErrorCount;
+        partial void OnEmailErrorCountChanging(global::System.Nullable<int> value);
+        partial void OnEmailErrorCountChanged();
         /// <summary>
-        /// There are no comments for Property Brand in the schema.
+        /// There are no comments for Property FormalName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Brand")]
-        public global::EFCoreSecurityODataConsoleClient._Brands Brand
+        [global::Microsoft.OData.Client.OriginalNameAttribute("FormalName")]
+        public string FormalName
         {
             get
             {
-                return this._Brand;
+                return this._FormalName;
             }
             set
             {
-                this.OnBrandChanging(value);
-                this._Brand = value;
-                this.OnBrandChanged();
-                this.OnPropertyChanged("Brand");
+                this.OnFormalNameChanging(value);
+                this._FormalName = value;
+                this.OnFormalNameChanged();
+                this.OnPropertyChanged("FormalName");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
-        private global::EFCoreSecurityODataConsoleClient._Brands _Brand;
-        partial void OnBrandChanging(global::EFCoreSecurityODataConsoleClient._Brands value);
-        partial void OnBrandChanged();
+        private string _FormalName;
+        partial void OnFormalNameChanging(string value);
+        partial void OnFormalNameChanged();
+        /// <summary>
+        /// There are no comments for Property HasDifferentPostalAddress in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasDifferentPostalAddress")]
+        public bool HasDifferentPostalAddress
+        {
+            get
+            {
+                return this._HasDifferentPostalAddress;
+            }
+            set
+            {
+                this.OnHasDifferentPostalAddressChanging(value);
+                this._HasDifferentPostalAddress = value;
+                this.OnHasDifferentPostalAddressChanged();
+                this.OnPropertyChanged("HasDifferentPostalAddress");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private bool _HasDifferentPostalAddress;
+        partial void OnHasDifferentPostalAddressChanging(bool value);
+        partial void OnHasDifferentPostalAddressChanged();
+        /// <summary>
+        /// There are no comments for Property HasDifferentVisitingAddress in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasDifferentVisitingAddress")]
+        public bool HasDifferentVisitingAddress
+        {
+            get
+            {
+                return this._HasDifferentVisitingAddress;
+            }
+            set
+            {
+                this.OnHasDifferentVisitingAddressChanging(value);
+                this._HasDifferentVisitingAddress = value;
+                this.OnHasDifferentVisitingAddressChanged();
+                this.OnPropertyChanged("HasDifferentVisitingAddress");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private bool _HasDifferentVisitingAddress;
+        partial void OnHasDifferentVisitingAddressChanging(bool value);
+        partial void OnHasDifferentVisitingAddressChanged();
+        /// <summary>
+        /// There are no comments for Property ImportDateTime in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ImportDateTime")]
+        public global::System.Nullable<global::System.DateTimeOffset> ImportDateTime
+        {
+            get
+            {
+                return this._ImportDateTime;
+            }
+            set
+            {
+                this.OnImportDateTimeChanging(value);
+                this._ImportDateTime = value;
+                this.OnImportDateTimeChanged();
+                this.OnPropertyChanged("ImportDateTime");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private global::System.Nullable<global::System.DateTimeOffset> _ImportDateTime;
+        partial void OnImportDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
+        partial void OnImportDateTimeChanged();
+        /// <summary>
+        /// There are no comments for Property Initials in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Initials")]
+        public string Initials
+        {
+            get
+            {
+                return this._Initials;
+            }
+            set
+            {
+                this.OnInitialsChanging(value);
+                this._Initials = value;
+                this.OnInitialsChanged();
+                this.OnPropertyChanged("Initials");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _Initials;
+        partial void OnInitialsChanging(string value);
+        partial void OnInitialsChanged();
+        /// <summary>
+        /// There are no comments for Property IsArchived in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsArchived")]
+        public bool IsArchived
+        {
+            get
+            {
+                return this._IsArchived;
+            }
+            set
+            {
+                this.OnIsArchivedChanging(value);
+                this._IsArchived = value;
+                this.OnIsArchivedChanged();
+                this.OnPropertyChanged("IsArchived");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private bool _IsArchived;
+        partial void OnIsArchivedChanging(bool value);
+        partial void OnIsArchivedChanged();
+        /// <summary>
+        /// There are no comments for Property IsDebtor in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsDebtor")]
+        public bool IsDebtor
+        {
+            get
+            {
+                return this._IsDebtor;
+            }
+            set
+            {
+                this.OnIsDebtorChanging(value);
+                this._IsDebtor = value;
+                this.OnIsDebtorChanged();
+                this.OnPropertyChanged("IsDebtor");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private bool _IsDebtor;
+        partial void OnIsDebtorChanging(bool value);
+        partial void OnIsDebtorChanged();
+        /// <summary>
+        /// There are no comments for Property IsLegalEntity in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsLegalEntity")]
+        public bool IsLegalEntity
+        {
+            get
+            {
+                return this._IsLegalEntity;
+            }
+            set
+            {
+                this.OnIsLegalEntityChanging(value);
+                this._IsLegalEntity = value;
+                this.OnIsLegalEntityChanged();
+                this.OnPropertyChanged("IsLegalEntity");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private bool _IsLegalEntity;
+        partial void OnIsLegalEntityChanging(bool value);
+        partial void OnIsLegalEntityChanged();
+        /// <summary>
+        /// There are no comments for Property JobTitle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("JobTitle")]
+        public string JobTitle
+        {
+            get
+            {
+                return this._JobTitle;
+            }
+            set
+            {
+                this.OnJobTitleChanging(value);
+                this._JobTitle = value;
+                this.OnJobTitleChanged();
+                this.OnPropertyChanged("JobTitle");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _JobTitle;
+        partial void OnJobTitleChanging(string value);
+        partial void OnJobTitleChanged();
+        /// <summary>
+        /// There are no comments for Property LastModificationDateTime in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("LastModificationDateTime")]
+        public global::System.DateTimeOffset LastModificationDateTime
+        {
+            get
+            {
+                return this._LastModificationDateTime;
+            }
+            set
+            {
+                this.OnLastModificationDateTimeChanging(value);
+                this._LastModificationDateTime = value;
+                this.OnLastModificationDateTimeChanged();
+                this.OnPropertyChanged("LastModificationDateTime");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private global::System.DateTimeOffset _LastModificationDateTime;
+        partial void OnLastModificationDateTimeChanging(global::System.DateTimeOffset value);
+        partial void OnLastModificationDateTimeChanged();
+        /// <summary>
+        /// There are no comments for Property LetterSalutation in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("LetterSalutation")]
+        public string LetterSalutation
+        {
+            get
+            {
+                return this._LetterSalutation;
+            }
+            set
+            {
+                this.OnLetterSalutationChanging(value);
+                this._LetterSalutation = value;
+                this.OnLetterSalutationChanged();
+                this.OnPropertyChanged("LetterSalutation");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _LetterSalutation;
+        partial void OnLetterSalutationChanging(string value);
+        partial void OnLetterSalutationChanged();
+        /// <summary>
+        /// There are no comments for Property LongName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("LongName")]
+        public string LongName
+        {
+            get
+            {
+                return this._LongName;
+            }
+            set
+            {
+                this.OnLongNameChanging(value);
+                this._LongName = value;
+                this.OnLongNameChanged();
+                this.OnPropertyChanged("LongName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _LongName;
+        partial void OnLongNameChanging(string value);
+        partial void OnLongNameChanged();
+        /// <summary>
+        /// There are no comments for Property MobileNo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MobileNo")]
+        public string MobileNo
+        {
+            get
+            {
+                return this._MobileNo;
+            }
+            set
+            {
+                this.OnMobileNoChanging(value);
+                this._MobileNo = value;
+                this.OnMobileNoChanged();
+                this.OnPropertyChanged("MobileNo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _MobileNo;
+        partial void OnMobileNoChanging(string value);
+        partial void OnMobileNoChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property No in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("No")]
+        public string No
+        {
+            get
+            {
+                return this._No;
+            }
+            set
+            {
+                this.OnNoChanging(value);
+                this._No = value;
+                this.OnNoChanged();
+                this.OnPropertyChanged("No");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _No;
+        partial void OnNoChanging(string value);
+        partial void OnNoChanged();
+        /// <summary>
+        /// There are no comments for Property PostalAddressBlock in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("PostalAddressBlock")]
+        public string PostalAddressBlock
+        {
+            get
+            {
+                return this._PostalAddressBlock;
+            }
+            set
+            {
+                this.OnPostalAddressBlockChanging(value);
+                this._PostalAddressBlock = value;
+                this.OnPostalAddressBlockChanged();
+                this.OnPropertyChanged("PostalAddressBlock");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _PostalAddressBlock;
+        partial void OnPostalAddressBlockChanging(string value);
+        partial void OnPostalAddressBlockChanged();
+        /// <summary>
+        /// There are no comments for Property ShortName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShortName")]
+        public string ShortName
+        {
+            get
+            {
+                return this._ShortName;
+            }
+            set
+            {
+                this.OnShortNameChanging(value);
+                this._ShortName = value;
+                this.OnShortNameChanged();
+                this.OnPropertyChanged("ShortName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _ShortName;
+        partial void OnShortNameChanging(string value);
+        partial void OnShortNameChanged();
+        /// <summary>
+        /// There are no comments for Property TelNo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("TelNo")]
+        public string TelNo
+        {
+            get
+            {
+                return this._TelNo;
+            }
+            set
+            {
+                this.OnTelNoChanging(value);
+                this._TelNo = value;
+                this.OnTelNoChanged();
+                this.OnPropertyChanged("TelNo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _TelNo;
+        partial void OnTelNoChanging(string value);
+        partial void OnTelNoChanged();
+        /// <summary>
+        /// There are no comments for Property VisitingAddressBlock in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("VisitingAddressBlock")]
+        public string VisitingAddressBlock
+        {
+            get
+            {
+                return this._VisitingAddressBlock;
+            }
+            set
+            {
+                this.OnVisitingAddressBlockChanging(value);
+                this._VisitingAddressBlock = value;
+                this.OnVisitingAddressBlockChanged();
+                this.OnPropertyChanged("VisitingAddressBlock");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _VisitingAddressBlock;
+        partial void OnVisitingAddressBlockChanging(string value);
+        partial void OnVisitingAddressBlockChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -382,63 +810,32 @@ namespace EFCoreSecurityODataConsoleClient
         }
     }
     /// <summary>
-    /// There are no comments for _Brands in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("_Brands")]
-    public enum _Brands
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Audi")]
-        Audi = 6,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("BMW")]
-        BMW = 9,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Ferrari")]
-        Ferrari = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Ford")]
-        Ford = 7,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Honda")]
-        Honda = 8,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Mercedes")]
-        Mercedes = 10,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Mini")]
-        Mini = 2,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Nissan")]
-        Nissan = 5,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Porsche")]
-        Porsche = 3,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Tesla")]
-        Tesla = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Toyota")]
-        Toyota = 11,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Volkswagen")]
-        Volkswagen = 4
-    }
-    /// <summary>
     /// Class containing all extension methods
     /// </summary>
     public static class ExtensionMethods
     {
         /// <summary>
-        /// Get an entity of type global::EFCoreSecurityODataConsoleClient.Car as global::EFCoreSecurityODataConsoleClient.CarSingle specified by key from an entity set
+        /// Get an entity of type global::EFCoreSecurityODataConsoleClient.ContactRecord as global::EFCoreSecurityODataConsoleClient.ContactRecordSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
         /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::EFCoreSecurityODataConsoleClient.CarSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::EFCoreSecurityODataConsoleClient.Car> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        public static global::EFCoreSecurityODataConsoleClient.ContactRecordSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::EFCoreSecurityODataConsoleClient.ContactRecord> source, global::System.Collections.Generic.Dictionary<string, object> keys)
         {
-            return new global::EFCoreSecurityODataConsoleClient.CarSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::EFCoreSecurityODataConsoleClient.ContactRecordSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::EFCoreSecurityODataConsoleClient.Car as global::EFCoreSecurityODataConsoleClient.CarSingle specified by key from an entity set
+        /// Get an entity of type global::EFCoreSecurityODataConsoleClient.ContactRecord as global::EFCoreSecurityODataConsoleClient.ContactRecordSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
-        /// <param name="iD">The value of iD</param>
-        public static global::EFCoreSecurityODataConsoleClient.CarSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::EFCoreSecurityODataConsoleClient.Car> source,
-            int iD)
+        /// <param name="index">The value of index</param>
+        public static global::EFCoreSecurityODataConsoleClient.ContactRecordSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::EFCoreSecurityODataConsoleClient.ContactRecord> source,
+            int index)
         {
             global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
-                { "ID", iD }
+                { "Index", index }
             };
-            return new global::EFCoreSecurityODataConsoleClient.CarSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::EFCoreSecurityODataConsoleClient.ContactRecordSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
     }
 }
