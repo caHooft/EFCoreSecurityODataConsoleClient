@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 27-3-2020 10:37:53
+// Generation date: 31-3-2020 11:51:30
 namespace EFCoreSecurityODataConsoleClient
 {
     /// <summary>
@@ -113,6 +113,7 @@ namespace EFCoreSecurityODataConsoleClient
         <Property Name=""HasDifferentPostalAddress"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""HasDifferentVisitingAddress"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""ImportDateTime"" Type=""Edm.DateTimeOffset"" />
+        <Property Name=""InfoAsXml"" Type=""Edm.String"" />
         <Property Name=""Initials"" Type=""Edm.String"" />
         <Property Name=""IsArchived"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""IsDebtor"" Type=""Edm.Boolean"" Nullable=""false"" />
@@ -446,6 +447,29 @@ namespace EFCoreSecurityODataConsoleClient
         private global::System.Nullable<global::System.DateTimeOffset> _ImportDateTime;
         partial void OnImportDateTimeChanging(global::System.Nullable<global::System.DateTimeOffset> value);
         partial void OnImportDateTimeChanged();
+        /// <summary>
+        /// There are no comments for Property InfoAsXml in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("InfoAsXml")]
+        public string InfoAsXml
+        {
+            get
+            {
+                return this._InfoAsXml;
+            }
+            set
+            {
+                this.OnInfoAsXmlChanging(value);
+                this._InfoAsXml = value;
+                this.OnInfoAsXmlChanged();
+                this.OnPropertyChanged("InfoAsXml");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "7.5.1")]
+        private string _InfoAsXml;
+        partial void OnInfoAsXmlChanging(string value);
+        partial void OnInfoAsXmlChanged();
         /// <summary>
         /// There are no comments for Property Initials in the schema.
         /// </summary>

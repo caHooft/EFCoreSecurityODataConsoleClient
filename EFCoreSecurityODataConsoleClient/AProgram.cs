@@ -49,6 +49,8 @@ namespace EFCoreSecurityODataConsoleClient
                     Console.WriteLine(p.Index);
                     Console.WriteLine(p.Email);
                     Console.WriteLine(p.JobTitle);
+                    Console.WriteLine(p.MobileNo);
+                    Console.WriteLine(p.FormalName);
                 }
             }
 
@@ -140,67 +142,38 @@ namespace EFCoreSecurityODataConsoleClient
             Console.WriteLine($"Your result: Added a car");
         }
 
-        //static void ChangeEntry(DefaultContainer container)
-        //{
-        //    string userInput = " ";
-        //    int cleanInput = 0;
+        static void ChangeEntry(DefaultContainer container)
+        {
+            string userInput = " ";
+            int cleanInput = 0;
 
-        //    Console.WriteLine($"Give the ID of the car you wish to change \n");
+            Console.WriteLine($"Give the ID of the entry you wish to change \n");
 
-        //    userInput = Console.ReadLine();
+            userInput = Console.ReadLine();
 
-        //    while (!int.TryParse(userInput, out cleanInput))
-        //    {
-        //        Console.Write("This is not valid input. Please enter an integer value: \n");
-        //        userInput = Console.ReadLine();
-        //    }
+            while (!int.TryParse(userInput, out cleanInput))
+            {
+                Console.Write("This is not valid input. Please enter an integer value: \n");
+                userInput = Console.ReadLine();
+            }
 
-        //    foreach (var p in container.Cars)
-        //    {
-        //        if (p.ID == cleanInput)
-        //        {
-        //            bool answer = false;
-        //            string input1 = "";
-        //            string colour = "";
-        //            int cleanNum1 = 0;
+            foreach (var p in container.Contact)
+            {
+                if (p.Index == cleanInput)
+                {
+                    p.ArchivedDateTime = DateTime.Now;
+                    container.UpdateObject(p);
 
-        //            Console.Write("Type the number of cars made, and then press Enter: \n");
-        //            input1 = Console.ReadLine();
+                    var serviceResponse = container.SaveChanges();
 
-        //            while (!int.TryParse(input1, out cleanNum1))
-        //            {
-        //                Console.Write("This is not valid input. Please enter an integer value: \n");
-        //                input1 = Console.ReadLine();
-        //            }
-
-        //                Console.Write("Type the color of the car, and then press Enter: \n");
-        //                colour = Console.ReadLine();
-
-        //                Console.Write("Is the car APK certifeid? Type true or false, and then press Enter: \n");
-        //                input1 = Console.ReadLine().ToLower();
-
-        //            if (string.Equals(input1, "true"))
-        //            {
-        //                answer = true;
-        //            }
-
-        //            p.AmountMade = cleanNum1;
-        //            p.Brand = SetBrand();
-        //            p.Colour = colour;
-        //            p.APK = answer;
-        //            p.TimeWhenAddedToDatabase = DateTime.Now;
-        //            container.UpdateObject(p);     
-
-        //            var serviceResponse = container.SaveChanges();
-
-        //            foreach (var operationResponse in serviceResponse)
-        //            {
-        //                Console.WriteLine("Response: {0}", operationResponse.StatusCode);
-        //            }
-        //        }
-        //    }
-        //    Console.WriteLine($"Your result: Changed a car \n");
-        //}
+                    foreach (var operationResponse in serviceResponse)
+                    {
+                        Console.WriteLine("Response: {0}", operationResponse.StatusCode);
+                    }
+                }
+            }
+            Console.WriteLine($"Your result: Changed a entry \n");
+        }
 
 
 
@@ -299,8 +272,8 @@ namespace EFCoreSecurityODataConsoleClient
         //}
 
         //Adds a new car to the list of cars
-        
-        
+
+
         //this runs first, I also call the other functions from here
         static void Main(string[] args)
         {
@@ -315,7 +288,7 @@ namespace EFCoreSecurityODataConsoleClient
 
                 Console.WriteLine("Choose an option from the following list:");
                 Console.WriteLine("\ta - Add Entity ");
-                //Console.WriteLine("\tc - change a car");
+                Console.WriteLine("\tc - change a entry");
                 Console.WriteLine("\tr - read the info of a entity");
                 Console.WriteLine("\tR - remove a entity");
                 Console.WriteLine("------------------------\n");
@@ -334,11 +307,11 @@ namespace EFCoreSecurityODataConsoleClient
                         AddEntry(container);
                         break;
 
-                    //case "c":
-                    //    //works
-                    //    Console.WriteLine("\n");
-                    //    ChangeEntry(container);
-                    //    break;
+                    case "c":
+                        //works
+                        Console.WriteLine("\n");
+                        ChangeEntry(container);
+                        break;
 
                     case "r":
                         //works
